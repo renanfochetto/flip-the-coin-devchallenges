@@ -27,8 +27,8 @@
 ## Table of Contents
 
 - [Overview](#overview)
-  - [What I learned](#what-i-learned)
-  - [Useful resources](#useful-resources)
+    - [What I learned](#what-i-learned)
+    - [Useful resources](#useful-resources)
 - [Built with](#built-with)
 - [Features](#features)
 - [Contact](#contact)
@@ -74,7 +74,8 @@ Introduce your projects by taking a screenshot or a gif. Try to tell visitors a 
 
 <!-- List the features of your application or follow the template. Don't share the figma file here :) -->
 
-This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges-dashboard) challenge.
+This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges-dashboard)
+challenge.
 
 ## Acknowledgements
 

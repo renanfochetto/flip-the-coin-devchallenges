@@ -8,11 +8,11 @@
 
 <div align="center">
   <h3>
-    <a href="{https://github.com/renanfochetto/flip-the-coin-devchallenges}">
+    <a href="https://github.com/renanfochetto/flip-the-coin-devchallenges">
       GitHub
     </a>
     <span> | </span>
-    <a href="{https://flip-the-coin-devchallenges.vercel.app/}">
+    <a href="https://flip-the-coin-devchallenges.vercel.app/">
       Solution
     </a>
     <span> | </span>

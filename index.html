@@ -3,31 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Flip the coin challenge from devChallenges.io" />
+    <meta name="author" content="Renan Fochetto - devChallenges.io" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="icon" href="resources/favicon.ico" type="image/x-icon" sizes="96x96"/>
+
+    <!-- Title -->
+    <title>Flip the coin | devChallenges.io</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="96x96"/>
+
+    <!-- Styles and Scripts -->
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
-    <title>Flip the coin | devChallenges.io</title>
   </head>
-  <body>
-    <main>
-      <section>
-        <div class="text-container">
-          <h1 class="kanit-heading">Flip the coin</h1>
+  <body class="font-style">
+    <main class="grid place-center full-size text-center">
+
+      <!-- Principal Section -->
+      <section class="grid row-gap-lg center">
+
+        <!-- Text Container -->
+        <div class="text-container grid row-gap-sm">
+          <h1 class="kanit-heading text-shadow">Flip the coin</h1>
           <p class="kanit-subheading">Press the coin or the button to flip the coin</p>
         </div>
-        <div class="coin-container">
-          <div class="coin">
-            <img src="resources/heads.svg" alt="">
-            <img src="resources/shadow.svg" alt="">
+
+        <!-- Coin Container -->
+        <div class="coin-container grid row-gap-md">
+
+          <!-- Coin Image Container -->
+          <div class="coin grid row-gap-md place-center">
+            <img id="flip-result" src="assets/images/heads.svg" alt="Image of a coin showing heads"/>
+            <img src="assets/images/shadow.svg" alt="">
+
+            <!-- Coin Flip Sound -->
+            <audio id="flip-sound" src="assets/sound/coinflip.mp3" preload="auto"></audio>
           </div>
-          <p class="kanit-subheading">Heads</p>
+
+          <!-- Coin Name -->
+          <p id="coin-name" class="kanit-subheading">Heads</p>
         </div>
+
+        <!-- Button Container -->
         <div class="button-container">
-          <button class="kanit-button">Random</button>
+          <button class="kanit-button button-shadow">Random</button>
         </div>
+
       </section>
     </main>
   </body>

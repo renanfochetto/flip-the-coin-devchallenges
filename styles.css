@@ -1,3 +1,5 @@
+@layers reset, base, utilities;
+
 @layer reset {
     *,
     *::before,
@@ -5,31 +7,10 @@
         box-sizing: border-box;
     }
 
-    /* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
-    html {
-        -moz-text-size-adjust: none;
-        -webkit-text-size-adjust: none;
-        text-size-adjust: none;
-    }
-
     body,
     h1,
-    h2,
-    h3,
-    h4,
-    p,
-    figure,
-    blockquote,
-    dl,
-    dd {
+    p {
         margin: 0;
-    }
-
-    /* https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html */
-    [role="list"] {
-        list-style: none;
-        margin: 0;
-        padding: 0;
     }
 
     body {
@@ -38,112 +19,137 @@
     }
 
     h1,
-    h2,
-    h3,
-    button,
-    input,
-    label {
+    button {
         line-height: 1.1;
     }
 
-    h1,
-    h2,
-    h3,
-    h4 {
+    h1 {
         text-wrap: balance;
     }
 
-    p,
-    li {
+    p {
         text-wrap: pretty;
     }
 
-    img,
-    picture {
+    img {
         max-inline-size: 100%;
         display: block;
     }
 
-    input,
-    button,
-    textarea,
-    select {
+    button {
         font: inherit;
     }
 
-    ul {
-        margin: 0;
-        padding: 0;
-    }
 }
 
 @layer base {
 
     :root {
+        /*Primitives*/
+
+        /* Colors */
         --black: #35383f;
         --white: #ecedf0;
         --blue: #1f6fb0;
         --dark-blue: #404a65;
+        --shadow-blue: #23649b;
 
+        /* Typography */
         --font-family: "Kanit", sans-serif;
 
+        /* Font-sizes */
         --font-size-sm: 1.250rem;
         --font-size-md: 1.500rem;
         --font-size-lg: 4.000rem;
+
+        /* Spacing */
+        --row-gap-sm: 1.2rem;
+        --row-gap-md: 2.4rem;
+        --row-gap-lg: 4.0rem;
+
+        /*Border-Radius*/
+        --border-radius-regular: 0.5rem;
+
     }
 
-}
-
-@layer layout {
-
+    /*Body Styles*/
     body {
         max-width: 1280px;
-        background-color: var(--dark-blue);
-        font-family: var(--font-family), sans-serif;
-        color: var(--white);
-        font-weight: 600;
-        font-style: normal;
         margin: 0 auto;
+        background-color: var(--dark-blue);
+        color: var(--white);
     }
 
-    main {
-        width: 100%;
-        height: 100vh;
-        display: grid;
-        place-items: center;
-        text-align: center;
+    /*Button Styles*/
+    button {
+        padding: 0.55rem 2.6rem;
+        border: none;
+        background-color: var(--blue);
+        color: var(--white);
+        border-radius: var(--border-radius-regular);
+        cursor: pointer;
     }
 
-    section {
-        display: grid;
-        place-items: center;
+    button:hover {
+        background-color: var(--shadow-blue);
+    }
+
+    button:active {
+        transform: scale(0.95);
+        transition: transform 0.1s ease;
     }
 
     .coin {
-        display: grid;
-        place-items: center;
+        cursor: pointer;
     }
-}
 
-@layer components {
-    button {
-        background-color: var(--blue);
-        color: var(--white);
-        border-radius: 8px;
-        padding: 0.55rem 2.6rem;
-        border: none;
-    }
 }
 
 @layer utilities {
+
+    /*Size*/
+    .full-size {
+        width: 100%;
+        height: 100vh;
+    }
+
+    /*Layout*/
+    .grid {
+        display: grid;
+    }
+
+    /*Positions*/
+    .place-center {
+        place-items: center;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    /*Row Gaps*/
+    .row-gap-sm {
+        row-gap: var(--row-gap-sm);
+    }
+
+    .row-gap-md {
+        row-gap: var(--row-gap-md);
+    }
+
+    .row-gap-lg {
+        row-gap: var(--row-gap-lg);
+    }
+
+    /*Font-Style*/
+    .font-style {
+        font-family: var(--font-family), sans-serif;
+        font-weight: 600;
+        font-style: normal;
+    }
+
+    /*Font-Sizes*/
     .kanit-heading {
         font-size: 4rem;
-        letter-spacing: 0.01em;
-        text-shadow:
-                -2px -2px 0 black,
-                4px -4px 0 black,
-                -2px 2px 0 black,
-                4px 4px 0 black;
     }
 
     .kanit-subheading {
@@ -153,5 +159,32 @@
     .kanit-button {
         font-size: 1.25rem;
         text-transform: uppercase;
+    }
+
+    /*Shadows*/
+    .text-shadow {
+        text-shadow: 2px 2px 0 var(--black);
+        --webkit-text-stroke-width: 5px;
+        --webkit-text-stroke-color: var(--black)
+    }
+
+    .button-shadow {
+        box-shadow: 0 4px 0 0 var(--shadow-blue);
+    }
+
+}
+
+@layer animation {
+    @keyframes spin-coin {
+        0% {
+            transform: rotateY(0deg);
+        }
+        100% {
+            transform: rotateY(1080deg);
+        }
+    }
+
+    .flip-animation {
+        animation: spin-coin 1s ease-in-out;
     }
 }
